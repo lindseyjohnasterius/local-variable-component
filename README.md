@@ -1,5 +1,7 @@
 # local-variable-component
+
 Creates an Input with a name that  saves its value to local storage.
+Demo: https://lindseymysse.github.io/local-variable-component/demo.html
 
 ## Usage
 
