@@ -53,7 +53,6 @@ class LocalVariable extends HTMLElement {
     this.innerText = document.querySelector(`#${this.source}`).value
     document.querySelector(`#${this.source}`)
       .addEventListener('UPDATED', (e) => {
-        console.log(e)
         this.innerText = e.detail[this.source]
     })
   }
@@ -104,11 +103,9 @@ class LocalVariable extends HTMLElement {
     this.value = new_value
     let detail = new Object()
     detail[this.id] = this.value
-    console.log(detail)
     localStorage.setItem(this.id, this.value)
     const new_event = new CustomEvent('UPDATED', {detail})
     this.dispatchEvent(new_event)
-    console.log("saved:", localStorage.getItem(this.id), this.value)
   }
 
   attributeChangedCallback(name, old_value, new_value){
