@@ -50,6 +50,7 @@ class LocalVariable extends HTMLElement {
   }
 
   initializeOutput(){
+    this.innerText = document.querySelector(`#${this.source}`).value
     document.querySelector(`#${this.source}`)
       .addEventListener('UPDATED', (e) => {
         console.log(e)
