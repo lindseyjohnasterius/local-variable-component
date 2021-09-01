@@ -39,7 +39,7 @@ class LocalVariable extends HTMLElement {
     this.id = this.getAttribute('id')
     if(this.id === null){
       this.id = getNewID()
-    } 
+    }    
 
     this.source = this.getAttribute('source')
     if(this.source === null){
@@ -75,6 +75,8 @@ class LocalVariable extends HTMLElement {
       }
     }
 
+
+
     this.input = document.createElement('input')
     this.input.setAttribute('value', this.value)
     this.input.addEventListener('keydown', (e) => {
@@ -82,6 +84,13 @@ class LocalVariable extends HTMLElement {
         this.setAttribute('value', e.target.value)
       }
     })
+
+    this.placeholder = this.getAttribute('placeholder')
+    if(this.placeholder !== null){
+      this.input.setAttribute('placeholder', this.placeholder)
+    } else {
+      this.input.setAttribute('placeholder', this.id)
+    }
     this.appendChild(this.input)
     const create_event = new CustomEvent('CREATED', {id:this.id})
     this.dispatchEvent(create_event)
