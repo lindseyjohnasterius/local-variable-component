@@ -40,6 +40,11 @@ class LocalVariable extends HTMLElement {
     if(this.id === null){
       this.id = getNewID()
     }    
+    
+    this.name = this.getAttribute('name')
+    if(this.name === null){
+      this.name = this.id
+    }
 
     this.source = this.getAttribute('source')
     if(this.source === null){
@@ -78,6 +83,7 @@ class LocalVariable extends HTMLElement {
 
     this.input = document.createElement('input')
     this.input.setAttribute('value', this.value)
+    this.input.setAttribute('name', this.name)
     this.input.addEventListener('keydown', (e) => {
       if(e.key === "Enter" && !e.ctrlKey){
         this.setAttribute('value', e.target.value)
