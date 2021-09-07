@@ -92,7 +92,7 @@ class LocalVariable extends HTMLElement {
     
     this.input.addEventListener('blur', (e) => {
       this.setAttribute('value', e.target.value)
-    }
+    })
 
     this.placeholder = this.getAttribute('placeholder')
     if(this.placeholder !== null){
