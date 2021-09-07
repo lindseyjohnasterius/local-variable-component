@@ -75,7 +75,7 @@ class LocalVariable extends HTMLElement {
     } else {
       this.value = this.getAttribute('value')
       if(this.value === null){
-        this.value = ' '
+        this.value = ''
       }
     }
 
