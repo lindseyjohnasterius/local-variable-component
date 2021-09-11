@@ -63,6 +63,7 @@ class LocalVariable extends HTMLElement {
       })
     } catch(e){
       this.innerText = `SEARCHING FOR ${this.source}`
+      setTimeout(()=>{this.initializeOutput()},5000)
     }
   }
 
