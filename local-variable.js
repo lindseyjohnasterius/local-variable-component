@@ -56,14 +56,14 @@ class LocalVariable extends HTMLElement {
 
   initializeOutput(){
     try {
-    this.innerText = document.querySelector(`#${this.source}`).value
+      this.innerText = document.querySelector(`#${this.source}`).value
+      document.querySelector(`#${this.source}`)
+        .addEventListener('UPDATED', (e) => {
+          this.innerText = e.detail[this.source]
+      })
     } catch(e){
-    this.innerText = `SEARCHING FOR ${this.source}`
+      this.innerText = `SEARCHING FOR ${this.source}`
     }
-    document.querySelector(`#${this.source}`)
-      .addEventListener('UPDATED', (e) => {
-        this.innerText = e.detail[this.source]
-    })
   }
 
   initializeInput(){
