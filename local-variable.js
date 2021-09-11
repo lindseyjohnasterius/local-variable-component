@@ -68,8 +68,6 @@ class LocalVariable extends HTMLElement {
   }
 
   initializeInput(){
-
-
     const url_vars = this.getValuesFromURL()
     const local_var_value = localStorage.getItem(this.id)
 
@@ -83,8 +81,6 @@ class LocalVariable extends HTMLElement {
         this.value = ''
       }
     }
-
-
 
     this.input = document.createElement('input')
     this.input.setAttribute('value', this.value)
